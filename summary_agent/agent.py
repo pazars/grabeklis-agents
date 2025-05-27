@@ -22,7 +22,7 @@ class ResponseSchema(BaseModel):
 
 
 config = types.GenerateContentConfig(
-    max_output_tokens=10000,
+    max_output_tokens=8192,
 )
 root_agent = Agent(
     name="summary_agent",
