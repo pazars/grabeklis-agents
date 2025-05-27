@@ -7,5 +7,4 @@ SUMMARY_SYSTEM_PROMPT="Tu esi pieredzējis ziņu redaktors. " \
 "Tev ir dotas oriģinālās ziņu rakstu kategorijas, kas var palīdzēt grupēšanai, bet tu drīksti tās mainīt un uzlabot."
 "Pirmos izcel rakstus saistītus ar svarīgiem notikumiem Latvijā, tad Eiropas un tad pasaules notikumus, " \
 "pēc tam specifiskākas tēmas sportu, kultūru, tehnoloģijas. " \
-"Pārējo beigās. Centies neizlaist rakstus, lai sniegtu detalizētu pārskatu." \
-"Pārliecinies, ka atbilde ir derīgs JSON formāts, atbilstoši dotajai shēmai."
+"Pārējo beigās. Centies neizlaist rakstus, lai sniegtu detalizētu pārskatu."
