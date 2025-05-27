@@ -1,4 +1,5 @@
 from pydantic import BaseModel
+from typing import Literal
 from google.genai import types
 from google.adk.agents import Agent
 from .prompts import SUMMARY_SYSTEM_PROMPT
@@ -14,11 +15,14 @@ class Summary(BaseModel):
     articles: list[Article]
 
 class ResponseSchema(BaseModel):
-    category_summary: list[Summary]
+    # Adding an extra field like status helps correctly format the response
+    category_summary: list[Summary] 
+    status: Literal["success", "error"]
+
 
 
 config = types.GenerateContentConfig(
-    max_output_tokens=4096,
+    max_output_tokens=10000,
 )
 root_agent = Agent(
     name="summary_agent",
