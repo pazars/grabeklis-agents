@@ -1,12 +1,10 @@
 from pydantic import BaseModel
 from google.genai import types
-from google.adk.agents import Agent
+from google.adk.agents import LlmAgent
 from .prompts import SUMMARY_SYSTEM_PROMPT
 
-
 class Article(BaseModel):
-    title: str
-    url: str
+    uuid: str
     summary: str
 
 
@@ -16,15 +14,17 @@ class Summary(BaseModel):
 
 
 class ResponseSchema(BaseModel):
-    category_summary: list[Summary]
+    summaries: list[Summary]
 
 
 config = types.GenerateContentConfig(
-    max_output_tokens=8192,
+    max_output_tokens=20000,
 )
-root_agent = Agent(
+
+
+root_agent = LlmAgent(
     name="summary_agent",
-    model="gemini-2.0-flash",
+    model="gemini-2.5-flash",
     description=("Ziņu rakstu kopsavilkumu aģents."),
     instruction=(SUMMARY_SYSTEM_PROMPT),
     output_schema=ResponseSchema,
